@@ -1,0 +1,51 @@
+#dato un insieme di 20 punti su un piano cartesiano, random compresi nell'intervallo 0,10 calcolare
+#il punto con ascissa massima e il punto con coordinata minima
+
+import random
+
+x = []
+y = []
+
+for i in range (0,20):
+    x.append(random.randint(0,10))
+    y.append(random.randint(0,10))
+    
+massimo = x[0]
+indice_max = 0
+minimo = y[0]
+indice_min = 0
+
+for i in range(0,20):
+    if x[i]>massimo:
+        massimo = x[i]
+        indice_max = i
+        
+for i in range(0,20):
+    if y[i]<minimo:
+        minimo = y[i]
+        indice_min = i
+    
+punti_cartesiano = []
+for i in range (0,20):
+    punto = (random.randint(0,10),random.randint(0,10))
+    punti_cartesiano.append(punto)
+    
+#come accedere alla x del primo punto
+print(punti_cartesiano[0][0])
+#come accedere alla y del primo punto
+print(punti_cartesiano[0][1])
+
+massimo = punti_cartesiano[0]
+minimo = punti_cartesiano[0]
+
+for i in range(0,20):
+    if punti_cartesiano[i][0]>massimo[0]:
+        massimo = punti_cartesiano[i]
+print(massimo)
+
+for i in range(0,20):
+    if punti_cartesiano[i][1]<minimo[1]:
+        minimo = punti_cartesiano[i]
+print(minimo)
+
+        
